@@ -7,11 +7,13 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'bytebank';
-  transferData: any;
+  transferStatement: any[] = [];
+
+  constructor(private service: TransferService) {
+
+  }
 
   transfer($event) {
     console.log($event);
-
-    this.transferData = $event;
   }
 }
