@@ -1,1 +1,4 @@
-<app-newTransfer></app-newTransfer>
+<app-newTransfer (onTransfer)="transfer($event)"></app-newTransfer>
+
+<p>Valor: {{transferData?.value}}</p>
+<p>Destino: {{transferData?.destination}}</p>
