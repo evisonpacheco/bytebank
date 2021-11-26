@@ -16,8 +16,8 @@ export class newTransferComponent {
   transfer() {
     console.log('Solicitada nova transferência');
 
-    const valueEmit = { value: this.value, destination: this.destination }
-    this.onTransfer.emit(valueEmit)
+    const valueEmit = { value: this.value, destination: this.destination };
+    this.onTransfer.emit(valueEmit);
 
     this.clearInputs();
   }
