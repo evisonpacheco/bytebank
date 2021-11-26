@@ -1,3 +1,4 @@
+import { Transferencia } from './../models/transfer.model';
 import { TransferService } from './../services/transfer.service';
 import { Component, OnInit } from '@angular/core';
 
@@ -8,12 +9,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class StatementComponent implements OnInit {
 
-  transferStatement: any[];
+  transferStatement: any[] = [];
 
   constructor(private service: TransferService) { }
 
   ngOnInit() {
-    this.transferStatement = this.service.transfers;
+    this.service.allTransfers().subscribe((transferStatement: Transferencia[]) => {
+      console.table(transferStatement);
+      this.transferStatement = transferStatement;
+    });
   }
-
 }
