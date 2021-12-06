@@ -6,7 +6,7 @@ import { RouterModule } from '@angular/router';
 import { Routes } from '@angular/router';
 
 export const routes: Routes = [
-  { path: '', redirectTo: 'extrato', pathMatch: 'full' },
+  { path: '', redirectTo: 'nova-transferencia', pathMatch: 'full' },
   { path: 'extrato', component: StatementComponent },
   { path: 'nova-transferencia', component: newTransferComponent },
 ];
