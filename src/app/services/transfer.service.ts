@@ -21,13 +21,13 @@ export class TransferService {
   }
 
   allTransfers(): Observable<Transferencia[]> {
-    return this.httpClient.get<Transferencia[]>(this.url)
+    return this.httpClient.get<Transferencia[]>(this.url);
   }
 
-  add(transfer: any) {
+  add(transfer: Transferencia): Observable<Transferencia> {
     this.handleData(transfer);
 
-    this.transferList.push(transfer);
+    return this.httpClient.post<Transferencia>(this.url, transfer);
   }
 
   private handleData(transfer: any) {
